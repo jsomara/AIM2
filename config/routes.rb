@@ -1,5 +1,6 @@
 AIM2::Application.routes.draw do
-  get "users/new"
+  resources :users
+  #get "users/new"
   root 'static_pages#home'
 
   #get "static_pages/home"
