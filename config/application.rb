@@ -21,5 +21,6 @@ module AIM2
     # config.i18n.default_locale = :de
 
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+    config.assets.paths << "#{Rails.root}/app.assets/videos"
   end
 end
