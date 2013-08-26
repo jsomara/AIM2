@@ -18,13 +18,13 @@ ActiveRecord::Schema.define(version: 20130823181830) do
     t.string   "audience"
     t.string   "behavior"
     t.string   "step"
-    t.integer  "project_owner"
+    t.integer  "user_id"
     t.string   "sme"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "projects", ["project_owner", "created_at"], name: "index_projects_on_project_owner_and_created_at"
+  add_index "projects", ["user_id", "created_at"], name: "index_projects_on_user_id_and_created_at"
 
   create_table "users", force: true do |t|
     t.string   "name"
