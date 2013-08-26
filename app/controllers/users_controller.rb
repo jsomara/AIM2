@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :signed_in_user, only: [:edit, :update]
-  before_action :correct_user, only: [:edit, :update]
+  before_action :signed_in_user, only: [:edit, :update, :show, :destroy]
+  before_action :correct_user, only: [:edit, :update, :show, :destroy]
   before_action :admin_user, only: :destroy
 
   def index
@@ -8,8 +8,7 @@ class UsersController < ApplicationController
   end
 
   def show
-  	@user = User.find(params[:id])
-    @projects = @user.projects.title.paginate(page: params[:page])
+    @projects = @user.collect_project_titles
   end
 
   def new
@@ -28,11 +27,9 @@ class UsersController < ApplicationController
   end
 
   def edit
-    #@user = User.find(params[:id])
   end
 
   def update
-    #@user = User.find(param[:id])
     if @user.update_attributes(user_params)
       flash[:success] = "Profile updated"
       sign_in @user

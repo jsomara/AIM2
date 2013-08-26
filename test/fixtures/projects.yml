@@ -5,13 +5,5 @@ one:
   audience: MyString
   behavior: MyString
   step: MyString
-  project_owner: 1
-  sme: MyString
-
-two:
-  title: MyString
-  audience: MyString
-  behavior: MyString
-  step: MyString
-  project_owner: 1
+  user_id: 1
   sme: MyString
