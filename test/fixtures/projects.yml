@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  audience: MyString
+  behavior: MyString
+  step: MyString
+  project_owner: 1
+  sme: MyString
+
+two:
+  title: MyString
+  audience: MyString
+  behavior: MyString
+  step: MyString
+  project_owner: 1
+  sme: MyString
