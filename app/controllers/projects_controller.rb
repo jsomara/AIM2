@@ -21,6 +21,10 @@ class ProjectsController < ApplicationController
 	def edit
 	end
 
+	def show
+		@
+	end
+
 	def destroy
 		@project.destroy
 		redirect_to root_url

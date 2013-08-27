@@ -1,7 +1,7 @@
 AIM2::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :projects, only: [:create, :edit, :destroy]
+  resources :projects#, only: [:create, :edit, :destroy]
   #get "users/new"
   root 'static_pages#home'
 
@@ -18,6 +18,8 @@ AIM2::Application.routes.draw do
   get '/signup', to: 'users#new'
   get '/signin', to: 'sessions#new'
   #post '/sessions', to: 'users#show'
+  get '/projects', to: 'projects#index'
+  #post '/', to 'projects'
   delete '/signout', to: 'sessions#destroy'
 
 
