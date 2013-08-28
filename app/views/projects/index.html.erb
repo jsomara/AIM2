@@ -1,23 +1,19 @@
-<% provide(:title, @project.title) %>
-<div class="row">
-	<aside class="span4">
-		<section>
-			<h1>
-				<%= @project.title %>
-				<%= @project.audience %>
-				<%= @project.behavior %>
-				<%= @project.step %>
-				<%= @project.sme %>
-			</h1>
-		</section>
-	</aside>
-	<div class="span8">
-		<% if @user.projects.any? %>
-			<h3>Projects (<%= @user.projects.count %>)</h3>
-			<ol class="projects">
-				<%= render @projects %>
-			</ol>
-			<%= will_paginate @projects %>
-		<% end %>
-	</div>
-</div>
+<% provide(:title, 'Projects') %>
+
+<h1>All projects</h1>
+
+<%= link_to "New Project", newproject_path, class: "btn btn-large btn-primary" %>
+
+<% will_paginate %>
+
+<ul class="projects">
+	<%= render @projects %>
+	<li>Projects should go here, by title </li>
+	<li>and here</li>
+    <li>and here</li>
+    <li>also here</li>
+</ul>
+
+<%#= @user.collect_project_titles %>
+
+<% will_paginate %>

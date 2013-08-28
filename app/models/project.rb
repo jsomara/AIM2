@@ -4,3 +4,14 @@ class Project < ActiveRecord::Base
 	validates :title, presence: true
 	validates :user_id, presence: true
 end
+
+  def collect_project_titles
+    titles = []
+    projects.each { |project| titles << project.title }
+    return titles
+  end
+
+  def show_titles
+  	titles = @user.collect_project_titles
+  	titles.each { @project.title }
+  end

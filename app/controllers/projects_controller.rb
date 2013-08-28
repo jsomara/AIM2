@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
 	before_action :correct_user, only: [:destroy, :edit]
 
 	def index
-		@project = Project.new
+		#@project = Project.new
 		@projects = Project.paginate(page: params[:page])
 	end
 
@@ -21,8 +21,13 @@ class ProjectsController < ApplicationController
 	def edit
 	end
 
+	def new
+		@project = Project.new
+		#redirect_to 'projects/show'
+	end
+
 	def show
-		@
+
 	end
 
 	def destroy
