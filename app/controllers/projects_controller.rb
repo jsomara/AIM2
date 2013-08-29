@@ -1,50 +1,46 @@
 class ProjectsController < ApplicationController
-	#attr_accessor :title, :audience, :behavior, :step, :sme
-	before_action :signed_in_user, only: [:create, :edit, :destroy]
-	before_action :correct_user, only: [:destroy, :edit]
+  before_action :signed_in_user, only: [:create, :edit, :destroy]
 
-	def index
-		#@project = Project.new
-		@projects = Project.paginate(page: params[:page])
-	end
+  def index
+    @projects = current_user.projects
+  end
 
-	def create
-		@project = current_user.projects.build(project_params)
-		if @project.save
-			flash[:success] = "Project created!"
-			redirect_to root_url
-		else
-			@feed_items = []
-			render 'static_pages/home'
-		end
-	end
+  def create
+    @project = Project.new(project_params)
+    ap "params: "
+    ap project_params
+    ap "project:"
+    ap @project
+    @project.user = current_user
+    if @project.save
+      flash[:success] = "Project created!"
+      redirect_to projects_url
+    else
+      flash[:error] = @project.errors #not quite right
+      render 'new'
+    end
+  end
 
-	def edit
-	end
+  def edit
+  end
 
-	def new
-		@project = Project.new
-		#redirect_to 'projects/show'
-	end
+  def new
+    @project = Project.new
+  end
 
-	def show
-		@project = Project.find(params[:id])
-	end
+  def show
+    @project = Project.find(params[:id])
+  end
 
-	def destroy
-		@project.destroy
-		redirect_to root_url
-	end
+  def destroy
+    @project.destroy
+    redirect_to root_url
+  end
 
-	private
+  private
 
-		def project_params
-			params.require(:project).permit(:title)
-		end
-
-		def correct_user
-			@project = current_user.projects.find_by(id: params[:id])
-			redirect_to root_url if @project.nil?
-		end
+    def project_params
+      params.require(:project).permit(:title, :sme, :audience, :behavior, :step)
+    end
 
 end

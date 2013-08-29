@@ -1,27 +1,27 @@
 <% provide(:title, 'Home') %>
 <% if signed_in? %>
-	<div class="row">
-		<aside class="span4">
-			<section>
-				<%= render 'shared/user_info' %>
-			</section>
-			<section>
-				<%#= render 'shared/project_form' %>
-			</section>
-		</aside>
-		<div class="span8">
-			<h3>Projects Feed</h3>
-			<%= render 'shared/feed' %>
-		</div>
-	</div>
+  <div class="row">
+    <aside class="span4">
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%#= render 'shared/project_form' %>
+      </section>
+    </aside>
+    <div class="span8">
+      <h3>Projects Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
 <% else %>
-	<div class="center hero-unit">
-		<h1>Welcome to AIM</h1>
+  <div class="center hero-unit">
+    <h1>Welcome to AIM</h1>
 
-		<h2>
-			This is the home page for AIM!
-		</h2>
+    <h2>
+      This is the home page for AIM!
+    </h2>
 
-		<%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
-	</div>
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+  </div>
 <% end %>

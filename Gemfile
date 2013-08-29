@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 
 gem 'rails', '4.0.0'
-
+gem 'awesome_print'
 #bootstrap y'all
 gem 'bootstrap-sass', '2.3.2.0'
 #encrypt ya'll
@@ -16,8 +16,6 @@ group :development do
 	gem 'better_errors'
 	gem 'binding_of_caller'
 end
-
-gem 'pg'
 
 
 # Use SCSS for stylesheets
@@ -50,7 +48,7 @@ group :doc do
 end
 
 group :production do
-  #gem 'pg'
+  gem 'pg'
   gem 'rails_12factor'
 end
 

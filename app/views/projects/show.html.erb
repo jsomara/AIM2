@@ -1,29 +1,18 @@
 <% provide(:title, @project) %>
 <div class="row">
-	<aside class="span4">
-		<section>
-			<h1>
-			
-				<%= @project.title %>
-				<%#= @project.audience %>
-				<%#= @project.behavior %>
-				<%#= @project.step %>
-				<%#= @project.sme %>
-			
-			</h1>
-		</section>
-	</aside>
-	<div class="span10">
-		<%# if @user.projects.any? %>
-			<h3>Projects (<%#= @user.projects.count %>)</h3>
-			<ol class="projects">
-				<%#= render @projects %>
-				<li>Project titles go here.</li>
-				<li>here</li>
-				<li>here</li>
-				<li>and here</li>
-			</ol>
-			<%#= will_paginate @projects %>
-		<%# end %>
-	</div>
+  <aside class="span4">
+    <section>
+      <h1>
+      
+      
+        <%= @project.title %>
+      </h1>
+      <ul>
+        <li><%= @project.audience %></li>
+        <li><%= @project.behavior %></li>
+        <li><%= @project.step %></li>
+        <li><%= @project.sme %></li>
+      </ul>
+    </section>
+  </aside>
 </div>

@@ -2,29 +2,29 @@
 <h1>Edit your project</h1>
 
 <div class="row">
-	<div class="span6 offset3">
-		<%= form_for(@project) do |f| %>
-			<%= render 'shared/error_messages', object: f.object %>
+  <div class="span6 offset3">
+    <%= form_for(@project) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
 
-			<%= f.label :title %>
-			<%= f.text_field :title %>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
 
-			<%= f.label :audience %>
-			<%= f.text_field :audience %>
+      <%= f.label :audience %>
+      <%= f.text_field :audience %>
 
-			<%= f.label :behavior %>
-			<%= f.text_area :behavior %>
+      <%= f.label :behavior %>
+      <%= f.text_area :behavior %>
 
-			<%= f.label :step %>
-			<%= f.text_area :step%>
+      <%= f.label :step %>
+      <%= f.text_area :step%>
 
-			<%#= f.label :project_owner %>
-			<%#= f.text_field :project_owner, "Who " %>
+      <%#= f.label :project_owner %>
+      <%#= f.text_field :project_owner, "Who " %>
 
-			<%= f.label :sme %>
-			<%= f.text_area :sme %>
+      <%= f.label :sme %>
+      <%= f.text_area :sme %>
 
-			<%= f.submit "Submit", class: "btn btn-large btn-primary" %>
-		<% end %>
-	</div>
+      <%= f.submit "Submit", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
 </div>

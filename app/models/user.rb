@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
   end
 
   def feed
-      projects
+    projects
   end
 
 private

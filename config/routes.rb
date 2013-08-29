@@ -1,7 +1,7 @@
 AIM2::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :projects#, only: [:create, :edit, :destroy]
+  resources :projects
   #get "users/new"
   root 'static_pages#home'
 
@@ -18,11 +18,6 @@ AIM2::Application.routes.draw do
   get '/signup', to: 'users#new'
   get '/signin', to: 'sessions#new'
   #post '/sessions', to: 'users#show'
-  get '/projects', to: 'projects#index'
-  get "projects/:id" => 'projects#show'
-  #get '/newproject', to: 'projects#new'
-  get '/project/new', to: 'projects#new'
-  post '/projects/new', to: 'projects#show'
   delete '/signout', to: 'sessions#destroy'
 
 
@@ -66,7 +61,7 @@ AIM2::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
