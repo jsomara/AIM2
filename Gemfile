@@ -13,6 +13,8 @@ gem 'bcrypt-ruby', '3.0.1'
 # Use sqlite3 as the database for Active Record
 group :development do
 	gem 'sqlite3'
+	gem 'better_errors'
+	gem 'binding_of_caller'
 end
 
 gem 'pg'

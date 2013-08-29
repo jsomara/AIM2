@@ -2,7 +2,7 @@
 
 <h1>All projects</h1>
 
-<%= link_to "New Project", newproject_path, class: "btn btn-large btn-primary" %>
+<%= link_to "New Project", 'projects/new', class: "btn btn-large btn-primary" %>
 
 <% will_paginate %>
 
@@ -12,6 +12,7 @@
 	<li>and here</li>
     <li>and here</li>
     <li>also here</li>
+    <%= @projects.each { @project.title } %>
 </ul>
 
 <%#= @user.collect_project_titles %>

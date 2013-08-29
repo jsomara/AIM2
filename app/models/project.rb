@@ -1,4 +1,5 @@
 class Project < ActiveRecord::Base
+	#attr_accessor :title, :audience, :behavior, :step, :sme
 	belongs_to :user
 	default_scope -> { order('created_at DESC') }
 	validates :title, presence: true

@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+	#attr_accessor :title, :audience, :behavior, :step, :sme
 	before_action :signed_in_user, only: [:create, :edit, :destroy]
 	before_action :correct_user, only: [:destroy, :edit]
 
@@ -27,7 +28,7 @@ class ProjectsController < ApplicationController
 	end
 
 	def show
-
+		@project = Project.find(params[:id])
 	end
 
 	def destroy

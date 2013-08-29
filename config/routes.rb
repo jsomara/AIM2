@@ -19,7 +19,9 @@ AIM2::Application.routes.draw do
   get '/signin', to: 'sessions#new'
   #post '/sessions', to: 'users#show'
   get '/projects', to: 'projects#index'
-  get '/newproject', to: 'projects#new'
+  get "projects/:id" => 'projects#show'
+  #get '/newproject', to: 'projects#new'
+  get '/project/new', to: 'projects#new'
   post '/projects/new', to: 'projects#show'
   delete '/signout', to: 'sessions#destroy'
 
